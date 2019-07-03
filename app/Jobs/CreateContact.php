@@ -64,7 +64,6 @@ class CreateContact implements ShouldQueue
                 'add' => [
                     [
                         'name' => $data['name'],
-                        'email' => 'thanksyougott@gmail.com',
                         'responsible_user_id' => $user->id,
                         'created_by' => $user->id,
                         'created_at' => Carbon::now()->timestamp,
