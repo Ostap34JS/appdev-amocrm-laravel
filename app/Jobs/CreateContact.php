@@ -16,14 +16,6 @@ class CreateContact implements ShouldQueue
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
     /**
-     * Format: field => id
-     */
-    const CUSTOM_FIELDS = [
-        'Salary'   => 87677,
-        'Position' => 87317,
-    ];
-
-    /**
      * @var array $data
      */
     private $data;
@@ -55,7 +47,7 @@ class CreateContact implements ShouldQueue
         $data = $this->data;
         $user = $this->amoCrmService->authorize()->user;
 
-        $customFields = self::CUSTOM_FIELDS;
+        $customFields = config('amocrm.custom_fields');
         foreach ($customFields as $key => $value){
             $key = strtolower($key);
 

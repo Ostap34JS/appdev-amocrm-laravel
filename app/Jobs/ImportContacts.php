@@ -14,11 +14,6 @@ class ImportContacts implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
-    const CUSTOM_FIELDS = [
-        'position',
-        'salary',
-    ];
-
     /**
      * @var AmoCrmService $amoCrmService
      */
@@ -42,7 +37,7 @@ class ImportContacts implements ShouldQueue
     public function handle()
     {
         $data = $this->amoCrmService->authorize()->getContacts();
-        $customFields = self::CUSTOM_FIELDS;
+        $customFields = config('amocrm.import_fields');
         $ids = Contact::select('original_id')->get()->pluck('original_id');
 
         $fillable = (new Contact())->getFillable();
