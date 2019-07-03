@@ -11,8 +11,6 @@ class Contact extends Model
         'company',
         'position',
         'salary',
-        'phone',
-        'email'
     ];
 
 

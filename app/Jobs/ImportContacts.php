@@ -48,7 +48,7 @@ class ImportContacts implements ShouldQueue
         $ids = Contact::select('original_id')->get()->pluck('original_id');
 
         $fillable = (new Contact())->getFillable();
-        $fillableValues = array_fill_keys($fillable, null);
+        $emptyValues = array_fill_keys($fillable, null);
 
         $contacts = [];
         foreach ($data as $item){
@@ -72,7 +72,7 @@ class ImportContacts implements ShouldQueue
                 }
             }
 
-            $contacts[] = $contact+$fillableValues;
+            $contacts[] = $contact+$emptyValues;
         }
 
         Contact::insert($contacts);
