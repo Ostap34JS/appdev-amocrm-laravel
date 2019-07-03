@@ -2,7 +2,9 @@
 
 ## Installation
 
-After installing as a basic laravel project (composer install, database - connect and seed, copy env and generate key), you need to open `.env` file, and change the value of the items starting with `AMO_` on yours.
+Edit `.env` file, and change the value of the items starting with `AMO_` on yours.
+
+Go to `config/amo.php`, and change you fields id in `custom_fields` section.
 
 ## Login data: (Admin)
 
