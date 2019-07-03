@@ -20,7 +20,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['middleware' => 'auth'], function (){
-    Route::resource('contacts', 'ContactController')->only('index', 'create', 'store');
+    Route::resource('contacts', 'ContactController')->only('index', 'create', 'store')->middleware(['auth', 'admin']);
 
-    Route::get('import/contacts', 'ImportController@contacts')->name('import.contacts');
+    Route::get('import/contacts', 'ImportController@contacts')->name('import.contacts')->middleware('auth', 'api');
 });

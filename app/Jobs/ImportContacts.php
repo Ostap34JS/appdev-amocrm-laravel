@@ -15,10 +15,8 @@ class ImportContacts implements ShouldQueue
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
     const CUSTOM_FIELDS = [
-        'phone',
-        'email',
         'position',
-        'salary'
+        'salary',
     ];
 
     /**

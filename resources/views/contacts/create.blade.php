@@ -4,6 +4,14 @@
     <form method="post" action="{{ route('contacts.store') }}" class="tile">
         @csrf
 
+        @if(!empty($errors->first()))
+            <div class="row col-lg-12">
+                <div class="alert alert-danger">
+                    <span>{{ $errors->first() }}</span>
+                </div>
+            </div>
+        @endif
+
         <div class="row">
             <div class="col-lg-12">
                 <h1>Add new contact</h1>
@@ -41,6 +49,11 @@
                             <div class="input-group-append"><span class="input-group-text">.00</span></div>
                         </div>
                     </div>
+                    @error('salary')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
                 </div>
 
                 <div class="form-group">

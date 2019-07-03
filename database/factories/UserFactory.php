@@ -3,6 +3,7 @@
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 use App\User;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Hash;
 use Faker\Generator as Faker;
 
 /*
@@ -20,7 +21,7 @@ $factory->define(User::class, function (Faker $faker) {
     return [
         'name' => $faker->name,
         'email' => $faker->unique()->safeEmail,
-        'password' => 'password',
+        'password' => Hash::make('password'),
         'remember_token' => Str::random(10),
     ];
 });
