@@ -17,7 +17,8 @@ class ImportContacts implements ShouldQueue
     const CUSTOM_FIELDS = [
         'phone',
         'email',
-        'position'
+        'position',
+        'salary'
     ];
 
     /**
@@ -62,7 +63,7 @@ class ImportContacts implements ShouldQueue
 
             //Add custom fields, that we need
             foreach ($item->custom_fields as $field){
-                $key = strtolower($field->code);
+                $key = strtolower($field->name);
 
                 if (in_array($key, $customFields) &&
                     in_array($key, $fillable)

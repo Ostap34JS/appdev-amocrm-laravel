@@ -18,6 +18,7 @@
                 <th>Name</th>
                 <th>Company</th>
                 <th>Position</th>
+                <th>Salary</th>
                 <th>Phone</th>
                 <th>Email</th>
             </tr>
@@ -29,6 +30,7 @@
                     <th>{{ $contact->name }}</th>
                     <th>{{ $contact->company }}</th>
                     <th>{{ $contact->position }}</th>
+                    <th>{{ $contact->salary }}</th>
                     <th>{{ $contact->phone }}</th>
                     <th>{{ $contact->email }}</th>
                 </tr>

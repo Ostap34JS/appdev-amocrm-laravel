@@ -10,6 +10,7 @@ class Contact extends Model
         'name',
         'company',
         'position',
+        'salary',
         'phone',
         'email'
     ];
