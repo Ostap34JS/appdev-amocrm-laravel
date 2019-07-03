@@ -22,6 +22,11 @@ class AmoCrmService
     public $leads = [];
 
     /**
+     * @var array $companies
+     */
+    public $companies = [];
+
+    /**
      * @return $this
      */
     public function authorize()
@@ -89,7 +94,7 @@ class AmoCrmService
         if (empty($body)) return [];
 
         $data = $body->_embedded->items;
-        $this->leads = $data;
+        $this->companies = $data;
 
         return $data;
     }
