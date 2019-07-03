@@ -18,3 +18,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::group(['middleware' => 'auth'], function (){
+    Route::resource('contacts', 'ContactController')->only('index', 'create', 'store');
+
+    Route::get('import/contacts', 'ImportController@contacts')->name('import.contacts');
+});

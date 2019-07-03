@@ -14,6 +14,12 @@ return [
     |
     */
 
+    'amocrm' => [
+        'subdomain' => env('AMO_SUBDOMAIN'),
+        'email' => env('AMO_EMAIL'),
+        'token' => env('AMO_TOKEN'),
+    ],
+
     'mailgun' => [
         'domain' => env('MAILGUN_DOMAIN'),
         'secret' => env('MAILGUN_SECRET'),
